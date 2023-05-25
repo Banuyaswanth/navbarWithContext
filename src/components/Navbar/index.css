@@ -1,0 +1,40 @@
+.dark-theme {
+  background-color: #333333;
+  color: #ffffff;
+}
+.light-theme {
+  color: #1e293b;
+  background-color: #ffffff;
+}
+.navbar {
+  height: 15vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.website-logo {
+  width: 40px;
+  margin: 15px;
+}
+.list-container {
+  list-style-type: none;
+  padding-left: 0px;
+  font-size: 14px;
+  display: flex;
+}
+li {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+.list-item {
+  margin-right: 10px;
+}
+.theme-toggle-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.theme {
+  width: 35px;
+}

@@ -1,0 +1,19 @@
+.container-properties {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.dark-theme {
+  background-color: #000000;
+  color: #ffffff;
+}
+.light-theme {
+  background-color: #ffffff;
+  color: #1e293b;
+}
+.home-image {
+  width: 60px;
+  height: 60px;
+}
