@@ -7,22 +7,20 @@ const Navbar = () => (
     {value => {
       const {isDarkTheme, toggleTheme} = value
       const themeName = isDarkTheme ? 'dark-theme' : 'light-theme'
+      const websiteLogoUrl = isDarkTheme
+        ? 'https://assets.ccbp.in/frontend/react-js/website-logo-dark-theme-img.png'
+        : 'https://assets.ccbp.in/frontend/react-js/website-logo-light-theme-img.png'
+      const themeUrl = isDarkTheme
+        ? 'https://assets.ccbp.in/frontend/react-js/light-theme-img.png'
+        : 'https://assets.ccbp.in/frontend/react-js/dark-theme-img.png'
       return (
         <nav className={`${themeName} navbar`}>
-          {isDarkTheme && (
-            <img
-              className="website-logo"
-              src="https://assets.ccbp.in/frontend/react-js/website-logo-dark-theme-img.png"
-              alt="website logo"
-            />
-          )}
-          {!isDarkTheme && (
-            <img
-              className="website-logo"
-              src="https://assets.ccbp.in/frontend/react-js/website-logo-light-theme-img.png"
-              alt="website logo"
-            />
-          )}
+          <img
+            className="website-logo"
+            src={websiteLogoUrl}
+            alt="website logo"
+          />
+
           <ul className="list-container">
             <li className="list-item">
               <Link to="/">Home</Link>
@@ -31,32 +29,13 @@ const Navbar = () => (
               <Link to="/about">About</Link>
             </li>
           </ul>
-          {isDarkTheme && (
-            <button
-              className="theme-toggle-button"
-              data-testid="theme"
-              onClick={toggleTheme}
-            >
-              <img
-                className="theme"
-                src="https://assets.ccbp.in/frontend/react-js/light-theme-img.png"
-                alt="theme"
-              />
-            </button>
-          )}
-          {!isDarkTheme && (
-            <button
-              className="theme-toggle-button"
-              data-testid="theme"
-              onClick={toggleTheme}
-            >
-              <img
-                className="theme"
-                src="https://assets.ccbp.in/frontend/react-js/dark-theme-img.png"
-                alt="theme"
-              />
-            </button>
-          )}
+          <button
+            className="theme-toggle-button"
+            data-testid="theme"
+            onClick={toggleTheme}
+          >
+            <img className="theme" src={themeUrl} alt="theme" />
+          </button>
         </nav>
       )
     }}

@@ -6,29 +6,17 @@ const Home = () => (
   <ThemeContext.Consumer>
     {value => {
       const {isDarkTheme} = value
+      const containerClassName = isDarkTheme ? 'dark-theme' : 'light-theme'
+      const imageUrl = isDarkTheme
+        ? 'https://assets.ccbp.in/frontend/react-js/home-dark-img.png'
+        : 'https://assets.ccbp.in/frontend/react-js/home-light-img.png'
       return (
         <>
           <Navbar />
-          {isDarkTheme && (
-            <div className="dark-theme container-properties">
-              <img
-                className="home-image"
-                src="https://assets.ccbp.in/frontend/react-js/home-dark-img.png"
-                alt="home"
-              />
-              <h1>Home</h1>
-            </div>
-          )}
-          {!isDarkTheme && (
-            <div className="light-theme container-properties">
-              <img
-                className="home-image"
-                src="https://assets.ccbp.in/frontend/react-js/home-light-img.png"
-                alt="home"
-              />
-              <h1>Home</h1>
-            </div>
-          )}
+          <div className={`${containerClassName} container-properties`}>
+            <img className="home-image" src={imageUrl} alt="home" />
+            <h1>Home</h1>
+          </div>
         </>
       )
     }}
